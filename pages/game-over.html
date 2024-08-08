@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Over</title>
-  
+  <link rel="stylesheet" href="../styles/styles.css">
   <style>
     .menu {
       position: fixed;
@@ -39,10 +39,6 @@
       text-align: center;
       padding: 50px;
     }
-
-    .record {
-      margin-top: 20px;
-    }
   </style>
 </head>
 <body>
@@ -52,10 +48,8 @@
   <div class="container">
     <h1>Parabéns!</h1>
     <p>Seu tempo foi: <span id="final-time"></span></p>
-    <p class="record">Recorde: <span id="record-time"></span></p>
     <button onclick="window.location.href='game.html'" class="button">Jogar Novamente</button>
   </div>
   <script src="../scripts/game-over.js"></script>
 </body>
 </html>
-
