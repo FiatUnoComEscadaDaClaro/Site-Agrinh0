@@ -37,7 +37,7 @@ const checkEndGame = () => {
     
     
     setTimeout(() => {
-      window.location.href = '../pages/login.html';
+      window.location.href = 'login.html';
     }, 1000); 
   }
 }
