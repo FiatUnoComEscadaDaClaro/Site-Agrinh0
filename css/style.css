@@ -170,6 +170,9 @@ aside {
 }
 
 .container-slide {
+    max-height: 90vh;
+    width: 50%;
+    height: auto;
     margin-top: -100px;
     margin-bottom: -100px;
     display: flex;
@@ -317,8 +320,9 @@ footer a:hover {
     line-height: 1.5;
 }
 .familiar{
-    margin-top: 10px;
-   height: auto;
-   width: 350px;
+    margin-top: 20px;
+    max-height: 90vh;
+    width: 70%;
+    height: auto;
 }
 
