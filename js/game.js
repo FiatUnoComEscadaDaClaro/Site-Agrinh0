@@ -3,7 +3,6 @@ const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
 const characters = [
-  
   'carta2',
   'carta3',
   'carta4',
@@ -23,12 +22,13 @@ const createElement = (tag, className) => {
 
 let firstCard = '';
 let secondCard = '';
+let timerInterval; // Defina uma variável global para o intervalo do temporizador
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
 
   if (disabledCards.length === 20) {
-    clearInterval(this.loop);
+    clearInterval(timerInterval); // Use a variável global para parar o temporizador
     alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
   }
 }
@@ -38,7 +38,6 @@ const checkCards = () => {
   const secondCharacter = secondCard.getAttribute('data-character');
 
   if (firstCharacter === secondCharacter) {
-
     firstCard.firstChild.classList.add('disabled-card');
     secondCard.firstChild.classList.add('disabled-card');
 
@@ -49,7 +48,6 @@ const checkCards = () => {
 
   } else {
     setTimeout(() => {
-
       firstCard.classList.remove('reveal-card');
       secondCard.classList.remove('reveal-card');
 
@@ -58,32 +56,26 @@ const checkCards = () => {
 
     }, 500);
   }
-
 }
 
 const revealCard = ({ target }) => {
-
   if (target.parentNode.className.includes('reveal-card')) {
     return;
   }
 
   if (firstCard === '') {
-
     target.parentNode.classList.add('reveal-card');
     firstCard = target.parentNode;
 
   } else if (secondCard === '') {
-
     target.parentNode.classList.add('reveal-card');
     secondCard = target.parentNode;
 
     checkCards();
-
   }
 }
 
 const createCard = (character) => {
-
   const card = createElement('div', 'card');
   const front = createElement('div', 'face front');
   const back = createElement('div', 'face back');
@@ -111,12 +103,10 @@ const loadGame = () => {
 }
 
 const startTimer = () => {
-
-  this.loop = setInterval(() => {
+  timerInterval = setInterval(() => { // Atribua o intervalo à variável global
     const currentTime = +timer.innerHTML;
     timer.innerHTML = currentTime + 1;
   }, 1000);
-
 }
 
 window.onload = () => {
