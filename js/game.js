@@ -27,7 +27,7 @@ let timerInterval; // Defina uma variável global para o intervalo do temporizad
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
 
-  if (disabledCards.length === 20) {
+  if (disabledCards.length === 18) {  // Corrigi o número total de cartas
     clearInterval(timerInterval); // Use a variável global para parar o temporizador
     alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
   }
