@@ -35,9 +35,9 @@ const checkEndGame = () => {
     // Armazenar o tempo final na localStorage
     localStorage.setItem('finalTime', finalTime);
     
-    // Redirecionar para a página de Game Over
+    // Redirecionar para a página de Login
     setTimeout(() => {
-      window.location.href = 'game-over.html';
+      window.location.href = '../pages/login.html';
     }, 1000); // Pequeno atraso para permitir que o alerta seja visto
   }
 }
