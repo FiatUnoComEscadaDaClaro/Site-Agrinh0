@@ -22,23 +22,23 @@ const createElement = (tag, className) => {
 
 let firstCard = '';
 let secondCard = '';
-let timerInterval; // Defina uma variável global para o intervalo do temporizador
+let timerInterval; 
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
 
-  if (disabledCards.length === 18) {  // Corrigi o número total de cartas
-    clearInterval(timerInterval); // Use a variável global para parar o temporizador
+  if (disabledCards.length === 18) { 
+    clearInterval(timerInterval); 
     const finalTime = timer.innerHTML;
     alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${finalTime}`);
     
-    // Armazenar o tempo final na localStorage
+    
     localStorage.setItem('finalTime', finalTime);
     
-    // Redirecionar para a página de Login
+    
     setTimeout(() => {
       window.location.href = '../pages/login.html';
-    }, 1000); // Pequeno atraso para permitir que o alerta seja visto
+    }, 1000); 
   }
 }
 
@@ -112,7 +112,7 @@ const loadGame = () => {
 }
 
 const startTimer = () => {
-  timerInterval = setInterval(() => { // Atribua o intervalo à variável global
+  timerInterval = setInterval(() => { 
     const currentTime = +timer.innerHTML;
     timer.innerHTML = currentTime + 1;
   }, 1000);
