@@ -29,7 +29,16 @@ const checkEndGame = () => {
 
   if (disabledCards.length === 18) {  // Corrigi o número total de cartas
     clearInterval(timerInterval); // Use a variável global para parar o temporizador
-    alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+    const finalTime = timer.innerHTML;
+    alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${finalTime}`);
+    
+    // Armazenar o tempo final na localStorage
+    localStorage.setItem('finalTime', finalTime);
+    
+    // Redirecionar para a página de Game Over
+    setTimeout(() => {
+      window.location.href = 'game-over.html';
+    }, 1000); // Pequeno atraso para permitir que o alerta seja visto
   }
 }
 
@@ -86,7 +95,7 @@ const createCard = (character) => {
   card.appendChild(back);
 
   card.addEventListener('click', revealCard);
-  card.setAttribute('data-character', character)
+  card.setAttribute('data-character', character);
 
   return card;
 }
